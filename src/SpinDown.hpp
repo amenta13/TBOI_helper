@@ -1,4 +1,8 @@
 #pragma once
 #include <string>
 
-int SpinDown(const std::string& name);
+class SpinDown {
+public:
+    static int byId(int id);
+    static std::string byName(const std::string& name);
+};

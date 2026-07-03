@@ -1,18 +1,56 @@
-# Data
-/data/
+# --- Build directories ---
+/release/
+/debug/
+/build/
+/out/
+/bin/
+/obj/
+/test/
 /data/scraper.py
-/data/isaac_items.csv
 
-# Build artifacts
-test.exe
-obj/
+# --- Qt generated files ---
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+*.qrc.dep
 
-# Temporary files
+# --- Qt Creator / qmake / CMake junk ---
+Makefile
+Makefile.Debug
+Makefile.Release
+*.pro.user
+*.pri.user
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+*.qmake.stash
+
+# --- Compiled objects ---
 *.o
 *.obj
-*.log
-*.tmp
+*.dll
+*.exe
+*.pdb
+*.lib
+*.a
 
-# Editor / IDE files
+# --- Qt cache ---
+*.qmlc
+*.jsc
+*.qsb
+
+# --- MSYS2 / MinGW build noise ---
+*.stackdump
+*.manifest
+*.exp
+
+# --- Logs ---
+*.log
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- VS Code ---
 .vscode/
-*.code-workspace

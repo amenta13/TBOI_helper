@@ -1,0 +1,721 @@
+Items,,,
+ID,Name,Quality,Type
+1,The Sad Onion,3,Passive
+2,The Inner Eye,2,"Passive, Tear Modifier"
+3,Spoon Bender,3,Passive
+4,Cricket's Head,4,Passive
+5,My Reflection,2,"Passive, Tear Modifier"
+6,Number One,2,Passive
+7,Blood of the Martyr,3,Passive
+8,Brother Bobby,1,"Passive, Familiar"
+9,Skatole,0,Passive
+10,Halo of Flies,2,"Passive, Orbital"
+11,1UP,2,Passive
+12,Magic Mushroom,4,Passive
+13,The Virus,2,Passive
+14,Roid Rage,2,Passive
+15,<3,2,Passive
+16,Raw Liver,2,Passive
+17,Skeleton Key,3,Passive
+18,A Dollar,3,Passive
+19,Boom!,0,Passive
+20,Transcendence,3,Passive
+21,The Compass,2,Passive
+22,Lunch,1,Passive
+23,Dinner,1,Passive
+24,Dessert,1,Passive
+25,Breakfast,1,Passive
+26,Rotten Meat,1,Passive
+27,Wooden Spoon,1,Passive
+28,The Belt,1,Passive
+29,Mom's Underwear,1,Passive
+30,Mom's Heels,1,Passive
+31,Mom's Lipstick,1,Passive
+32,Wire Coat Hanger,3,Passive
+33,The Bible,1,Active
+34,The Book of Belial,2,Active
+35,The Necronomicon,1,Active
+36,The Poop,0,Active
+37,Mr. Boom,1,Active
+38,Tammy's Head,2,Active
+39,Mom's Bra,1,Active
+40,Kamikaze,0,Active
+41,Mom's Pad,0,Active
+42,Bob's Rotten Head,1,Active
+44,Teleport,0,Active
+45,Yum Heart,1,Active
+46,Lucky Foot,2,Passive
+47,Doctor's Remote,1,Active
+48,Cupid's Arrow,3,Passive
+49,Shoop Da Whoop!,2,Active
+50,Steven,3,Passive
+51,Pentagram,3,Passive
+52,Dr. Fetus,4,"Passive, Tear Modifier"
+53,Magneto,1,Passive
+54,Treasure Map,2,Passive
+55,Mom's Eye,1,"Passive, Tear Modifier"
+56,Lemon Mishap,0,Active
+57,Distant Admiration,2,"Passive, Orbital"
+58,Book of Shadows,3,Active
+60,The Ladder,1,Passive
+62,Charm of the Vampire,1,Passive
+63,The Battery,2,Passive
+64,Steam Sale,2,Passive
+65,Anarchist Cookbook,1,Active
+66,The Hourglass,1,Active
+67,Sister Maggy,1,"Passive, Familiar"
+68,Technology,3,"Passive, Tear Modifier"
+69,Chocolate Milk,3,"Passive, Tear Modifier"
+70,Growth Hormones,3,Passive
+71,Mini Mush,2,Passive
+72,Rosary,2,Passive
+73,Cube of Meat,2,Passive
+74,A Quarter,0,Passive
+75,PhD,2,Passive
+76,X-Ray Vision,2,Passive
+77,My Little Unicorn,1,Active
+78,Book of Revelations,3,Active
+79,The Mark,3,Passive
+80,The Pact,3,Passive
+81,Dead Cat,3,Passive
+82,Lord of the Pit,3,Passive
+83,The Nail,2,Active
+84,We Need To Go Deeper,2,Active
+85,Deck of Cards,2,Active
+86,Monstro's Tooth,1,Active
+87,Loki's Horns,1,"Passive, Tear Modifier"
+88,Little Chubby,2,"Passive, Familiar"
+89,Spider Bite,2,Passive
+90,The Small Rock,3,Passive
+91,Spelunker Hat,2,Passive
+92,Super Bandage,2,Passive
+93,The Gamekid,1,Active
+94,Sack of Pennies,1,"Passive, Familiar"
+95,Robo-Baby,1,"Passive, Familiar"
+96,Little C.H.A.D,2,"Passive, Familiar"
+97,The Book of Sin,2,Active
+98,The Relic,3,"Passive, Familiar"
+99,Little Gish,2,"Passive, Familiar"
+100,Little Steven,2,"Passive, Familiar"
+101,The Halo,2,Passive
+102,Mom's Bottle of Pills,1,Active
+103,The Common Cold,1,Passive
+104,The Parasite,3,Passive
+105,The D6,4,Active
+106,Mr. Mega,2,Passive
+107,Pinking Shears,2,Active
+108,The Wafer,4,Passive
+109,Money = Power,3,Passive
+110,Mom's Contacts,3,Passive
+111,The Bean,0,Active
+112,Guardian Angel,2,"Passive, Orbital"
+113,Demon Baby,2,"Passive, Familiar"
+114,Mom's Knife,4,"Passive, Tear Modifier"
+115,Ouija Board,2,Passive
+116,9 Volt,2,Passive
+117,Dead Bird,0,"Passive, Familiar"
+118,Brimstone,4,"Passive, Tear Modifier"
+119,Blood Bag,2,Passive
+120,Odd Mushroom (Thin),2,Passive
+121,Odd Mushroom (Large),2,Passive
+122,Whore of Babylon,2,Passive
+123,Monster Manual,1,Active
+124,Dead Sea Scrolls,1,Active
+125,Bobby - Bomb,2,Passive
+126,Razor Blade,0,Active
+127,Forget Me Now,3,Active
+128,Forever Alone,1,"Passive, Orbital"
+129,Bucket of Lard,1,Passive
+130,A Pony,2,Active
+131,Bomb Bag,2,"Passive, Familiar"
+132,A Lump of Coal,3,Passive
+133,Guppy's Paw,3,Active
+134,Guppy's Tail,2,Passive
+135,IV Bag,1,Active
+136,Best Friend,1,Active
+137,Remote Detonator,1,Active
+138,Stigmata,2,Passive
+139,Mom's Purse,2,Passive
+140,Bob's Curse,1,Passive
+141,Pageant Boy,0,Passive
+142,Scapular,2,Passive
+143,Speed Ball,2,Passive
+144,Bum Friend,1,"Passive, Familiar"
+145,Guppy's Head,2,Active
+146,Prayer Card,3,Active
+147,Notched Axe,1,Active
+148,Infestation,0,Passive
+149,Ipecac,4,"Passive, Tear Modifier"
+150,Tough Love,3,Passive
+151,The Mulligan,3,Passive
+152,Technology 2,2,"Passive, Tear Modifier"
+153,Mutant Spider,3,"Passive, Tear Modifier"
+154,Chemical Peel,2,Passive
+155,The Peeper,2,"Passive, Familiar"
+156,Habit,2,Passive
+157,Bloody Lust,2,Passive
+158,Crystal Ball,3,Active
+159,Spirit of the Night,3,Passive
+160,Crack The Sky,2,Active
+161,Ankh,1,Passive
+162,Celtic Cross,1,Passive
+163,Ghost Baby,1,"Passive, Familiar"
+164,The Candle,2,Active
+165,Cat-O-Nine-Tails,3,Passive
+166,D20,2,Active
+167,Harlequin Baby,1,"Passive, Familiar"
+168,Epic Fetus,4,"Passive, Tear Modifier"
+169,Polyphemus,4,Passive
+170,Daddy Longlegs,3,"Passive, Familiar"
+171,Spider Butt,1,Active
+172,Sacrificial Dagger,2,"Passive, Orbital"
+173,Mitre,3,Passive
+174,Rainbow Baby,1,"Passive, Familiar"
+175,Dad's Key,2,Active
+176,Stem Cells,1,Passive
+177,Portable Slot,0,Active
+178,Holy Water,3,"Passive, Familiar"
+179,Fate,3,Passive
+180,The Black Bean,0,Passive
+181,White Pony,2,Active
+182,Sacred Heart,4,"Passive, Tear Modifier"
+183,Toothpicks,3,Passive
+184,Holy Grail,3,Passive
+185,Dead Dove,3,Passive
+186,Blood Rights,0,Active
+187,Guppy's Hairball,1,"Passive, Familiar"
+188,Abel,0,"Passive, Familiar"
+189,SMB Super Fan,3,Passive
+190,Pyro,3,Passive
+191,3 Dollar Bill,3,"Passive, Tear Modifier"
+192,Telepathy for Dummies,1,Active
+193,MEAT!,2,Passive
+194,Magic 8 Ball,1,Passive
+195,Mom's Coin Purse,1,Passive
+196,Squeezy,3,Passive
+197,Jesus Juice,2,Passive
+198,Box,0,Passive
+199,Mom's Key,3,Passive
+200,Mom's Eyeshadow,1,Passive
+201,Iron Bar,2,Passive
+202,Midas Touch,2,Passive
+203,Humbleing Bundle,3,Passive
+204,Fanny pack,1,Passive
+205,Sharp Plug,2,Passive
+206,The Guillotine,2,Passive
+207,Ball of Bandages,2,"Passive, Orbital"
+208,Champion Belt,3,Passive
+209,Butt Bombs,2,Passive
+210,Gnawed Leaf,1,Passive
+211,Spiderbaby,0,Passive
+212,Guppy's Collar,1,Passive
+213,Lost Contact,2,Passive
+214,Anemic,1,Passive
+215,Goat Head,3,Passive
+216,Ceremonial Robes,3,Passive
+217,Mom's Wig,2,Passive
+218,Placenta,2,Passive
+219,Old Bandage,2,Passive
+220,Sad Bombs,2,Passive
+221,Rubber Cement,3,Passive
+222,Anti-Gravity,2,"Passive, Tear Modifier"
+223,Pyromaniac,3,Passive
+224,Cricket's Body,3,Passive
+225,Gimpy,2,Passive
+226,Black Lotus,2,Passive
+227,Piggy Bank,1,Passive
+228,Mom's Perfume,2,Passive
+229,Monstro's Lung,2,"Passive, Tear Modifier"
+230,Abaddon,3,Passive
+231,Ball of Tar,2,Passive
+232,Stop Watch,4,Passive
+233,Tiny Planet,0,"Passive, Tear Modifier"
+234,Infestation 2,3,Passive
+236,E. Coli,1,Passive
+237,Death's Touch,3,"Passive, Tear Modifier"
+238,Key Piece #1,0,"Passive, Familiar"
+239,Key Piece #2,0,"Passive, Familiar"
+240,Experimental Treatment,1,Passive
+241,Contract From Below,3,Passive
+242,Infamy,2,Passive
+243,Trinity Shield,2,Passive
+244,Tech.5,3,"Passive, Tear Modifier"
+245,20/20,4,"Passive, Tear Modifier"
+246,Blue Map,2,Passive
+247,BFFS!,2,Passive
+248,Hive Mind,2,Passive
+249,There's Options,3,Passive
+250,Bogo Bombs,1,Passive
+251,Starter Deck,2,Passive
+252,Little Baggy,0,Passive
+253,Magic Scab,2,Passive
+254,Blood Clot,2,Passive
+255,Screw,3,Passive
+256,Hot Bombs,1,Passive
+257,Fire Mind,2,Passive
+258,Missing No,0,Passive
+259,Dark Matter,3,Passive
+260,Black Candle,3,Passive
+261,Proptosis,3,"Passive, Tear Modifier"
+262,Missing Page 2,0,Passive
+264,Smart Fly,2,"Passive, Familiar"
+265,Dry Baby,3,"Passive, Familiar"
+266,Juicy Sack,2,"Passive, Familiar"
+267,Robo-Baby 2.0,1,"Passive, Familiar"
+268,Rotten Baby,3,"Passive, Familiar"
+269,Headless Baby,1,"Passive, Familiar"
+270,Leech,2,"Passive, Familiar"
+271,Mystery Sack,2,"Passive, Familiar"
+272,BBF,1,"Passive, Familiar"
+273,Bob's Brain,1,"Passive, Familiar"
+274,Best Bud,0,"Passive, Orbital"
+275,Lil Brimstone,2,"Passive, Familiar"
+276,Isaac's Heart,0,"Passive, Familiar"
+277,Lil Haunt,1,"Passive, Familiar"
+278,Dark Bum,3,"Passive, Familiar"
+279,Big Fan,2,"Passive, Orbital"
+280,Sissy Long Legs,1,"Passive, Familiar"
+281,Punching Bag,1,"Passive, Familiar"
+282,How To Jump,1,Active
+283,D100,3,Active
+284,D4,2,Active
+285,D10,1,Active
+286,Blank Card,2,Active
+287,Book of Secrets,1,Active
+288,Box of Spiders,1,Active
+289,Red Candle,2,Active
+290,The Jar,0,Active
+291,FLUSH!,1,Active
+292,Satanic Bible,4,Active
+293,Head of Krampus,2,Active
+294,Butter Bean,1,Active
+295,Magic Fingers,1,Active
+296,Converter,2,Active
+297,Pandora's Box,2,Active
+298,Unicorn Stump,1,Active
+299,Taurus,1,Passive
+300,Aries,2,Passive
+301,Cancer,3,Passive
+302,Leo,1,Passive
+303,Virgo,2,Passive
+304,Libra,1,Passive
+305,Scorpio,3,Passive
+306,Sagittarius,3,Passive
+307,Capricorn,3,Passive
+308,Aquarius,2,Passive
+309,Pisces,2,Passive
+310,Eve's Mascara,3,Passive
+311,Judas' Shadow,3,Passive
+312,Maggy's Bow,2,Passive
+313,Holy Mantle,4,Passive
+314,Thunder Thighs,1,Passive
+315,Strange Attractor,0,Passive
+316,Cursed Eye,0,"Passive, Tear Modifier"
+317,Mysterious Liquid,3,Passive
+318,Gemini,1,"Passive, Familiar"
+319,Cain's Other Eye,2,"Passive, Familiar"
+320,???'s Only Friend,2,"Passive, Familiar"
+321,Samson's Chains,1,"Passive, Familiar"
+322,Mongo Baby,2,"Passive, Familiar"
+323,Isaac's Tears,1,Active
+324,Undefined,2,Active
+325,Scissors,1,Active
+326,Breath of Life,1,Active
+327,The Polaroid,2,Passive
+328,The Negative,2,Passive
+329,The Ludovico Technique,2,"Passive, Tear Modifier"
+330,Soy Milk,2,"Passive, Tear Modifier"
+331,Godhead,4,"Passive, Tear Modifier"
+332,Lazarus' Rags,1,Passive
+333,The Mind,3,Passive
+334,The Body,3,Passive
+335,The Soul,3,Passive
+336,Dead Onion,3,Passive
+337,Broken Watch,1,Passive
+338,Boomerang,1,Active
+339,Safety Pin,1,Passive
+340,Caffeine Pill,1,Passive
+341,Torn Photo,3,Passive
+342,Blue Cap,3,Passive
+343,Latch Key,1,Passive
+344,Match Book,1,Passive
+345,Synthoil,3,Passive
+346,A Snack,1,Passive
+347,Diplopia,3,Active
+348,Placebo,2,Active
+349,Wooden Nickel,1,Active
+350,Toxic Shock,3,Passive
+351,Mega Bean,1,Active
+352,Glass Cannon,1,Active
+353,Bomber Boy,2,Passive
+354,Crack Jacks,2,Passive
+355,Mom's Pearls,2,Passive
+356,Car Battery,3,Passive
+357,Box of Friends,1,Active
+358,The Wiz,0,Passive
+359,8 Inch Nails,3,"Passive, Tear Modifier"
+360,Incubus,4,"Passive, Familiar"
+361,Fate's Reward,2,"Passive, Familiar"
+362,Lil Chest,2,"Passive, Familiar"
+363,Sworn Protector,3,"Passive, Familiar"
+364,Friend Zone,1,"Passive, Familiar"
+365,Lost Fly,2,"Passive, Familiar"
+366,Scatter Bombs,1,Passive
+367,Sticky Bombs,2,"Passive, Bomb Modifier"
+368,Epiphora,2,Passive
+369,Continuum,2,Passive
+370,Mr. Dolly,3,Passive
+371,Curse of The Tower,0,Passive
+372,Charged Baby,3,"Passive, Familiar"
+373,Dead Eye,3,Passive
+374,Holy Light!,3,Passive
+375,Host Hat,3,Passive
+376,Restock,2,Passive
+377,Bursting Sack,1,Passive
+378,No. 2,2,Passive
+379,Pupula Duplex,2,Passive
+380,Pay To Play,2,Passive
+381,Eden's Blessing,3,Passive
+382,Friendly Ball,1,Active
+383,Tear Detonator,1,Active
+384,Lil Gurdy,2,"Passive, Familiar"
+385,Bumbo,1,"Passive, Familiar"
+386,D12,1,Active
+387,Censer,3,"Passive, Familiar"
+388,Key Bum,0,"Passive, Familiar"
+389,Rune Bag,3,"Passive, Familiar"
+390,Seraphim,3,"Passive, Familiar"
+391,Betrayal,1,Passive
+392,Zodiac,1,Passive
+393,Serpent's Kiss,2,Passive
+394,Marked,1,Passive
+395,Tech X,4,"Passive, Tear modifier"
+396,Ventricle Razor,1,Active
+397,Tractor Beam,3,"Passive, Tear Modifier"
+398,God's Flesh,1,Passive
+399,Maw of The Void,3,Passive
+400,Spear of Destiny,2,Passive
+401,Explosivo,3,Passive
+402,Chaos,3,Passive
+403,Spider Mod,1,Passive
+404,Farting Baby,1,"Passive, Familiar"
+405,GB Bug,1,Passive
+406,D8,2,Active
+407,Purity,3,Passive
+408,Athame,3,Passive
+409,Empty Vessel,2,Passive
+410,Evil Eye,2,Passive
+411,Lusty Blood,3,Passive
+412,Cambion Conception,2,Passive
+413,Immaculate Conception,1,Passive
+414,More Options,3,Passive
+415,Crown of Light,4,Passive
+416,Deep Pockets,2,Passive
+417,Succubus,3,"Passive, Familiar"
+418,Fruit Cake,3,"Passive, Tear Modifier"
+419,Teleport 2.0,3,Active
+420,Black Powder,1,Passive
+421,Kidney Bean,1,Active
+422,Glowing Hour Glass,3,Active
+423,Circle of Protection,2,Passive
+424,Sack Head,3,Passive
+425,Night Light,1,Passive
+426,Obsessed Fan,0,"Passive, Familiar"
+427,Mine Crafter,1,Active
+428,PJs,2,Passive
+429,Head of the Keeper,2,Passive
+430,Papa Fly,1,"Passive, Familiar"
+431,Multidimensional Baby,2,"Passive, Familiar"
+432,Glitter Bombs,2,"Passive, Bomb Modifier"
+433,My Shadow,2,Passive
+434,Jar of Flies,2,Active
+435,Lil Loki,1,Passive
+436,Milk!,1,"Passive, Familiar"
+437,D7,1,Active
+438,Binky,3,Passive
+439,Mom's Box,2,Active
+440,Kidney Stone,2,Passive
+441,Mega Blast,4,Active
+442,Dark Prince's Crown,1,Passive
+443,Apple!,3,Passive
+444,Lead Pencil,3,Passive
+445,Dog Tooth,2,Passive
+446,Dead Tooth,1,Passive
+447,Linger Bean,0,Passive
+448,Shard of Glass,1,Passive
+449,Metal Plate,1,Passive
+450,Eye of Greed,2,Passive
+451,Tarot Cloth,2,Passive
+452,Varicose Veins,1,Passive
+453,Compound Fracture,3,Passive
+454,Polydactyly,2,Passive
+455,Dad's Lost Coin,1,Passive
+456,Midnight Snack,1,Passive
+457,Cone Head,2,Passive
+458,Belly Button,3,Passive
+459,Sinus Infection,3,Passive
+460,Glaucoma,1,Passive
+461,Parasitoid,3,Passive
+462,Eye of Belial,3,Passive
+463,Sulfuric Acid,2,Passive
+464,Glyph of Balance,2,Passive
+465,Analog Stick,2,Passive
+466,Contagion,2,Passive
+467,Finger!,1,"Passive, Familiar"
+468,Shade,0,"Passive, Familiar"
+469,Depression,1,"Passive, Familiar"
+470,Hushy,0,"Passive, Familiar"
+471,Lil Monstro,2,"Passive, Familiar"
+472,King Baby,1,"Passive, Familiar"
+473,Big Chubby,2,"Passive, Familiar"
+475,Plan C,0,Active
+476,D1,2,Active
+477,Void,4,Active
+478,Pause,1,Active
+479,Smelter,3,Active
+480,Compost,1,Active
+481,Dataminer,0,Active
+482,Clicker,0,Active
+483,MaMa Mega!,3,Active
+484,Wait What?,1,Active
+485,Crooked Penny,2,Active
+486,Dull Razor,1,Active
+487,Potato Peeler,2,Active
+488,Metronome,1,Active
+489,D Infinity,4,Active
+490,Eden's Soul,3,Active
+491,Acid Baby,2,"Passive, Familiar"
+492,YO LISTEN!,2,"Passive, Familiar"
+493,Adrenaline,2,Passive
+494,Jacob's Ladder,3,Passive
+495,Ghost Pepper,4,Passive
+496,Euthanasia,3,Passive
+497,Camo Undies,3,Passive
+498,Duality,1,Passive
+499,Eucharist,3,Passive
+500,Sack of Sacks,3,"Passive, Familiar"
+501,Greed's Gullet,1,Passive
+502,Large Zit,1,Passive
+503,Little Horn,3,Passive
+504,Brown Nugget,0,Active
+505,Poke Go,2,Passive
+506,BackStabber,3,Passive
+507,Sharp Straw,2,Active
+508,Mom's Razor,2,"Passive, Familiar"
+509,Bloodshot Eye,1,"Passive, Familiar"
+510,Delirious,1,Active
+511,Angry Fly,1,"Passive, Familiar"
+512,Black Hole,1,Active
+513,Bozo,2,Passive
+514,Broken Modem,3,Passive
+515,Mystery Gift,3,Active
+516,Sprinkler,2,Active
+517,Fast Bombs,1,Passive
+518,Buddy in a Box,2,"Passive, Familiar"
+519,Lil Delirium,2,"Passive, Familiar"
+520,Jumper Cables,3,Passive
+521,Coupon,2,Active
+522,Telekinesis,1,Active
+523,Moving Box,1,Active
+524,Technology Zero,3,Passive
+525,Leprosy,1,Passive
+526,7 Seals,2,Passive
+527,Mr. ME!,3,Active
+528,Angelic Prism,3,"Passive, Orbital"
+529,Pop!,1,Passive
+530,Death's List,2,Passive
+531,Haemolacria,4,Passive
+532,Lachryphagy,2,Passive
+533,Trisagion,3,Passive
+534,Schoolbag,3,Passive
+535,Blanket,2,Passive
+536,Sacrificial Altar,2,Active
+537,Lil Spewer,1,Passive
+538,Marbles,2,Passive
+539,Mystery Egg,1,Passive
+540,Flat Stone,2,Passive
+541,Marrow,1,Passive
+542,Slipped Rib,2,Passive
+543,Hallowed Ground,1,Passive
+544,Pointy Rib,2,Passive
+545,Book of the Dead,3,Active
+546,Dad's Ring,3,Passive
+547,Divorce Papers,3,Passive
+548,Jaw Bone,1,Passive
+549,Brittle Bones,3,Passive
+550,Broken Shovel,4,Active
+551,Broken Shovel,4,Passive
+552,Mom's Shovel,4,Active
+263,Clear Rune,2,Active
+553,Mucormycosis,3,Passive
+554,2Spooky,1,Passive
+555,Golden Razor,1,Active
+556,Sulfur,2,Active
+557,Fortune Cookie,2,Active
+558,Eye Sore,1,Passive
+559,120 Volt,2,Passive
+560,It Hurts,1,Passive
+561,Almond Milk,1,"Passive, Tear Modifier"
+562,Rock Bottom,3,Passive
+563,Nancy Bombs,2,Passive
+564,A Bar of Soap,3,Passive
+565,Blood Puppy,1,"Passive, Familiar"
+566,Dream Catcher,2,Passive
+567,Paschal Candle,3,Passive
+568,Divine Intervention,2,Passive
+569,Blood Oath,1,Passive
+570,Playdough Cookie,3,"Passive, Tear Modifier"
+571,Orphan Socks,2,Passive
+572,Eye of the Occult,3,Passive
+573,Immaculate Heart,3,Passive
+574,Monstrance,2,Passive
+575,The Intruder,3,Passive
+576,Dirty Mind,1,Passive
+577,Damocles,2,Active
+578,Free Lemonade,1,Active
+579,Spirit Sword,3,"Passive, Tear Modifier"
+580,Red Key,3,Active
+581,Psy Fly,4,"Passive, Familiar"
+582,Wavy Cap,1,Active
+583,Rocket in a Jar,2,Passive
+584,Book of Virtues,3,Active/Passive Item
+585,Alabaster Box,2,Active
+586,The Stairway,3,Passive
+588,Sol,2,Passive
+589,Luna,2,Passive
+590,Mercurius,3,Passive
+591,Venus,2,Passive
+592,Terra,3,"Passive, Tear Modifier"
+593,Mars,2,Passive
+594,Jupiter,2,Passive
+595,Saturnus,2,Passive
+596,Uranus,3,Passive
+597,Neptunus,3,"Passive, Tear Modifier"
+598,Pluto,3,Passive
+599,Voodoo Head,2,Passive
+600,Eye Drops,3,Passive
+601,Act of Contrition,3,Passive
+602,Member Card,2,Passive
+603,Battery Pack,0,Passive
+604,Mom's Bracelet,1,Active
+605,The Scooper,1,Active
+606,Ocular Rift,3,Passive
+607,Boiled Baby,1,"Passive, Familiar"
+608,Freezer Baby,2,"Passive, Familiar"
+609,Eternal D6,3,Active
+610,Bird Cage,1,Passive
+611,Larynx,2,Active
+612,Lost Soul,2,"Passive, Familiar"
+614,Blood Bombs,2,Passive
+615,Lil Dumpy,3,Passive
+616,Bird's Eye,3,Passive
+617,Lodestone,3,Passive
+618,Rotten Tomato,2,Passive
+619,Birthright,3,Passive
+619,Birthright (Tainted),3,Passive
+621,Red Stew,2,Passive
+622,Genesis,3,Active
+623,Sharp Key,1,Active
+624,Booster Pack,1,Passive
+625,Mega Mush,4,Active
+626,Knife Piece 1,0,Passive
+627,Knife Piece 2,0,Passive
+628,Death Certificate,4,Active
+629,Bot Fly,3,"Passive, Familiar"
+631,Meat Cleaver,1,Active
+632,Evil Charm,2,Passive
+633,Dogma,3,Passive
+634,Purgatory,2,Passive
+635,Stitches,1,"Active, Familiar"
+636,R Key,4,Active
+637,Knockout Drops,3,Passive
+638,Eraser,2,Active
+639,Yuck Heart,1,Active
+640,Urn of Souls,3,Active
+641,Akeldama,2,Passive
+642,Magic Skin,2,Active
+643,Revelation,4,Passive
+644,Consolation Prize,1,Passive
+645,Tinytoma,1,"Passive, Familiar"
+646,Brimstone Bombs,2,Passive
+647,4.5 Volt,2,Passive
+649,Fruity Plum,1,"Passive, Familiar"
+650,Plum Flute,1,Active
+651,Star of Bethlehem,3,"Passive, Familiar"
+652,Cube Baby,1,"Passive, Familiar"
+653,Vade Retro,2,Active
+654,False PHD,2,Passive
+655,Spin to Win,1,"Active & Passive, Familiar"
+657,Vasculitis,1,Passive
+658,Giant Cell,1,Passive
+659,Tropicamide,1,Passive
+660,Card Reading,3,Passive
+661,Quints,2,Passive
+663,Tooth and Nail,2,Passive
+664,Binge Eater,4,Passive
+665,Guppy's Eye,2,Passive
+667,Strawman,2,"Passive, Familiar"
+668,Dad's Note,0,Passive
+669,Sausage,3,Passive
+670,Options?,2,Passive
+671,Candy Heart,1,Passive
+672,A Pound of Flesh,1,Passive
+673,Redemption,2,Passive
+674,Spirit Shackles,2,Passive
+675,Cracked Orb,1,Passive
+676,Empty Heart,1,Passive
+677,Astral Projection,2,Passive
+678,C Section,4,Passive
+679,Lil Abaddon,2,"Passive, Familiar"
+680,Montezuma's Revenge,2,Passive
+681,Lil Portal,1,"Passive, Familiar"
+682,Worm Friend,3,"Passive, Familiar"
+683,Bone Spurs,2,Passive
+684,Hungry Soul,2,Passive
+685,Jar of Wisps,2,Active
+686,Soul Locket,1,Passive
+687,Friend Finder,3,Active
+688,Inner Child,2,Passive
+689,Glitched Crown,4,Passive
+690,Belly Jelly,3,Passive
+691,Sacred Orb,4,Passive
+692,Sanguine Bond,1,Passive
+693,The Swarm,2,Passive
+694,Heartbreak,3,Passive
+695,Bloody Gust,2,Passive
+696,Salvation,3,Passive
+697,Vanishing Twin,2,"Passive, Familiar"
+698,Twisted Pair,4,"Passive, Familiar"
+699,Azazel's Rage,2,Passive
+700,Echo Chamber,3,Passive
+701,Isaac's Tomb,3,Passive
+702,Vengeful Spirit,1,Passive
+703,Esau Jr,2,Active
+704,Berserk!,2,Active
+705,Dark Arts,2,Active
+706,Abyss,4,Active
+707,Supper,1,Passive
+708,Stapler,3,Passive
+709,Suplex!,2,Active
+710,Bag of Crafting,3,Active
+711,Flip,4,Active
+712,Lemegeton,3,Active
+713,Sumptorium,3,Active
+714,Recall,0,Active
+715,Hold,0,Active
+716,Keeper's Sack,3,Passive
+717,Keeper's Kin,2,Passive
+719,Keeper's Box,2,Active
+720,Everything Jar,3,Active
+721,TMTRAINER,0,Passive
+722,Anima Sola,2,Active
+723,Spindown Dice,4,Active
+724,Hypercoagulation,2,Passive
+725,IBS,0,Passive
+726,Hemoptysis,2,Passive
+727,Ghost Bombs,2,Passive
+728,Gello,3,Active
+729,Decap Attack,2,Active
+730,Glass Eye,3,Passive
+731,Stye,2,Passive
+732,Mom's Ring,3,Passive
