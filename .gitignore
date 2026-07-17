@@ -7,6 +7,7 @@
 /obj/
 /test/
 /data/scraper.py
+/data/rename_images.py
 
 # --- Qt generated files ---
 moc_*.cpp

@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QStackedWidget>
 #include "src/SpinDown.hpp"
+#include "src/ItemDB.hpp"
 
 SpindownScreen::SpindownScreen(QWidget *parent)
     : QWidget(parent)
@@ -32,6 +33,16 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     auto *resultLabel = new QLabel("Result: ", this);
     resultLabel->setStyleSheet("font-size: 18px;");
 
+    // Result image
+    auto *imageLabel = new QLabel(this);
+    imageLabel->setFixedSize(96, 96);
+    imageLabel->setAlignment(Qt::AlignCenter);
+    QPixmap placeHolder("src/images/questionmark.png");
+    imageLabel->setPixmap(
+        placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+    );
+
+
     // Buttons
     auto *btnCalculate = new QPushButton("Calculate Next ID", this);
     auto *btnBack = new QPushButton("Back to Home", this);
@@ -46,22 +57,49 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     layout->addWidget(btnCalculate);
     layout->addSpacing(10);
     layout->addWidget(resultLabel);
+    layout->addWidget(imageLabel);
     layout->addSpacing(20);
     layout->addWidget(btnBack);
 
     layout->setAlignment(Qt::AlignTop);
 
     // Logic connection
-    connect(btnCalculate, &QPushButton::clicked, this, [inputBox, resultLabel]() {
+    connect(btnCalculate, &QPushButton::clicked, this, [inputBox, resultLabel, imageLabel, placeHolder]() {
         std::string name = inputBox->text().toStdString();
 
         if (name.empty()) {
             resultLabel->setText("Result: No item entered");
+            imageLabel->setPixmap(
+                placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+            );
             return;
         }
 
         std::string result = SpinDown::byName(name);
-        resultLabel->setText(QString::fromStdString(result));
+        resultLabel->setText(QString::fromStdString(titlecase(result)));
+
+        const Item* nextItem = ItemDatabase::instance().getByName(result);
+
+
+        if (!nextItem) {
+            imageLabel->setPixmap(
+                placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+            );
+            return;
+        }
+
+        QPixmap pix(QString::fromStdString(nextItem->imagePath));
+
+        if (!pix.isNull()) {
+            imageLabel->setPixmap(
+                pix.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+            );
+        } else {
+            imageLabel->setPixmap(
+                placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+            );
+        }
+
     });
 
 

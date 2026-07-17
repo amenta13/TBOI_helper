@@ -3,6 +3,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <algorithm>
+#include <iomanip>
 #include "ItemDB.hpp"
 
 ItemDatabase& ItemDatabase::instance() {
@@ -64,6 +65,12 @@ bool ItemDatabase::loadFromCSV(const std::string& path) {
         item.quality = std::stoi(qualityStr);
         item.type = split(stripQuotes(typeStr), ',');
 
+        // Make 3 Digit ID#
+        std::ostringstream oss;
+        oss << std::setw(3) << std::setfill('0') << item.id;
+        std::string id3 = oss.str();
+        item.imagePath = "src/images/item" + id3 + ".png";
+
         byId[item.id] = item;
         byName[item.name] = item.id;
     }
@@ -86,7 +93,7 @@ const Item* ItemDatabase::getByName(const std::string& name) const {
     int id = item_name->second;
 
     auto item_id = byId.find(id);
-    if (item_name == byName.end())
+    if (item_id == byId.end())
         return nullptr;
 
     return &item_id->second;

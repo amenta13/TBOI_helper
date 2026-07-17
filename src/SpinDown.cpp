@@ -39,5 +39,5 @@ std::string SpinDown::byName(const std::string& name) {
         return "invalid spindown result";
 
     // Return titlecased name for UI
-    return titlecase(newItem->name);
+    return newItem->name;
 }

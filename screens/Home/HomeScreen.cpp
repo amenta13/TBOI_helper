@@ -17,9 +17,9 @@ HomeScreen::HomeScreen(QWidget *parent)
     title->setStyleSheet("font-size: 28px; font-weight: bold;");
 
     auto *btnSpindown = new QPushButton("Spindown Dice Tool", this);
-    auto *btnItems = new QPushButton("Item Browser", this);
-    auto *btnTree = new QPushButton("Gameplay Tree", this);
-    auto *btnChars = new QPushButton("Character Info", this);
+    auto *btnItems = new QPushButton("Item Browser (WIP)", this);
+    auto *btnChars = new QPushButton("Character Info (WIP)", this);
+    auto *btnTree = new QPushButton("Gameplay Tree (WIP)", this);
 
     auto *btnExit = new QPushButton("Exit", this);
 
@@ -32,8 +32,8 @@ HomeScreen::HomeScreen(QWidget *parent)
     layout->addSpacing(20);
     layout->addWidget(btnSpindown);
     layout->addWidget(btnItems);
-    layout->addWidget(btnTree);
     layout->addWidget(btnChars);
+    layout->addWidget(btnTree);
 
     layout->addSpacing(20);
     layout->addWidget(btnExit);
@@ -43,8 +43,8 @@ HomeScreen::HomeScreen(QWidget *parent)
     // Navigation (will work once screens exist)
     connect(btnSpindown, &QPushButton::clicked, [stack](){ stack->setCurrentIndex(1); });
     connect(btnItems, &QPushButton::clicked, [stack](){ stack->setCurrentIndex(2); });
-    connect(btnTree, &QPushButton::clicked, [stack](){ stack->setCurrentIndex(3); });
-    connect(btnChars, &QPushButton::clicked, [stack](){ stack->setCurrentIndex(4); });
+    connect(btnChars, &QPushButton::clicked, [stack](){ stack->setCurrentIndex(3); });
+    connect(btnTree, &QPushButton::clicked, [stack](){ stack->setCurrentIndex(4); });
 
     // Exit button
     connect(btnExit, &QPushButton::clicked, []() {

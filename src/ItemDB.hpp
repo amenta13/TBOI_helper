@@ -9,6 +9,7 @@ struct Item {
     std::string name;
     int quality;
     std::vector<std::string> type;
+    std::string imagePath;
 
     // Future Implementations
     //---------------------------------
