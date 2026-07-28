@@ -41,3 +41,21 @@ std::string SpinDown::byName(const std::string& name) {
     // Return titlecased name for UI
     return newItem->name;
 }
+
+// Return the next N Spindowns
+std::vector<const Item*> SpinDown::nextN(const Item* start, int count) {
+    std::vector<const Item*> results;
+    int id = start->id;
+
+    for (int i = 0; i < count; i++) {
+        id = byId(id);
+        if (id < 0) break;
+
+        const Item* item = ItemDatabase::instance().getById(id);
+        if (!item) break;
+
+        results.push_back(item);
+    }
+
+    return results;
+}

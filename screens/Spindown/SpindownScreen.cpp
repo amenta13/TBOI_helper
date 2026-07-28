@@ -5,6 +5,9 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QStackedWidget>
+#include <QListWidget>
+#include <QSpinBox>
+#include <QScrollArea>
 #include "src/SpinDown.hpp"
 #include "src/ItemDB.hpp"
 
@@ -29,19 +32,29 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     inputRow->addWidget(inputLabel);
     inputRow->addWidget(inputBox);
 
+    // Count row (how many spindowns)
+    auto *countRow = new QHBoxLayout();
+    auto *countLabel = new QLabel("Show next N items:", this);
+    auto *countBox = new QSpinBox(this);
+    countBox->setRange(1, 20);
+    countBox->setValue(1);
+
+    countRow->addWidget(countLabel);
+    countRow->addWidget(countBox);
+
     // Result label
     auto *resultLabel = new QLabel("Result: ", this);
     resultLabel->setStyleSheet("font-size: 18px;");
 
-    // Result image
-    auto *imageLabel = new QLabel(this);
-    imageLabel->setFixedSize(96, 96);
-    imageLabel->setAlignment(Qt::AlignCenter);
-    QPixmap placeHolder("src/images/questionmark.png");
-    imageLabel->setPixmap(
-        placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
-    );
+    // Scrollable results area
+    auto *scrollArea = new QScrollArea(this);
+    scrollArea->setWidgetResizable(true);
 
+    auto *scrollWidget = new QWidget(scrollArea);
+    auto *resultsLayout = new QVBoxLayout(scrollWidget);
+    scrollWidget->setLayout(resultsLayout);
+
+    scrollArea->setWidget(scrollWidget);
 
     // Buttons
     auto *btnCalculate = new QPushButton("Calculate Next ID", this);
@@ -54,54 +67,82 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     layout->addWidget(title);
     layout->addSpacing(15);
     layout->addLayout(inputRow);
+    layout->addLayout(countRow);
     layout->addWidget(btnCalculate);
     layout->addSpacing(10);
-    layout->addWidget(resultLabel);
-    layout->addWidget(imageLabel);
+    layout->addWidget(scrollArea);
     layout->addSpacing(20);
     layout->addWidget(btnBack);
 
     layout->setAlignment(Qt::AlignTop);
 
+    QPixmap placeHolder("src/images/questionmark.png");
+
     // Logic connection
-    connect(btnCalculate, &QPushButton::clicked, this, [inputBox, resultLabel, imageLabel, placeHolder]() {
+    connect(btnCalculate, &QPushButton::clicked, this, [inputBox, countBox, resultsLayout, placeHolder]() {
+
+        // Clear previous results
+        while (QLayoutItem* item = resultsLayout->takeAt(0)) {
+            if (item->widget()) delete item->widget();
+            delete item;
+        }
+
         std::string name = inputBox->text().toStdString();
-
         if (name.empty()) {
-            resultLabel->setText("Result: No item entered");
-            imageLabel->setPixmap(
-                placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
-            );
+            QLabel* msg = new QLabel("Result: No item entered");
+            resultsLayout->addWidget(msg);
             return;
         }
 
-        std::string result = SpinDown::byName(name);
-        resultLabel->setText(QString::fromStdString(titlecase(result)));
-
-        const Item* nextItem = ItemDatabase::instance().getByName(result);
-
-
-        if (!nextItem) {
-            imageLabel->setPixmap(
-                placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
-            );
+        // Lookup starting item
+        const Item* startItem = ItemDatabase::instance().getByName(name);
+        if (!startItem) {
+            QLabel* msg = new QLabel("Item not found");
+            resultsLayout->addWidget(msg);
             return;
         }
 
-        QPixmap pix(QString::fromStdString(nextItem->imagePath));
+        int count = countBox->value();
+        const Item* current = startItem;
 
-        if (!pix.isNull()) {
-            imageLabel->setPixmap(
-                pix.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
-            );
-        } else {
-            imageLabel->setPixmap(
-                placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
-            );
+        for (int i = 0; i < count; i++) {
+
+            int nextId = SpinDown::byId(current->id);
+            const Item* nextItem = ItemDatabase::instance().getById(nextId);
+
+            if (!nextItem) break;
+
+            // Build row
+            QWidget* row = new QWidget;
+            QHBoxLayout* rowLayout = new QHBoxLayout(row);
+
+            QLabel* imgLabel = new QLabel;
+            imgLabel->setFixedSize(96, 96);
+            imgLabel->setAlignment(Qt::AlignCenter);
+
+            QPixmap pix(QString::fromStdString(nextItem->imagePath));
+            if (!pix.isNull()) {
+                imgLabel->setPixmap(
+                    pix.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+                );
+            } else {
+                imgLabel->setPixmap(
+                    placeHolder.scaled(96, 96, Qt::KeepAspectRatio, Qt::SmoothTransformation)
+                );
+            }
+
+            QLabel* nameLabel = new QLabel(QString::fromStdString(nextItem->name));
+            nameLabel->setStyleSheet("font-size: 18px;");
+
+            rowLayout->addWidget(imgLabel);
+            rowLayout->addWidget(nameLabel);
+
+            resultsLayout->addWidget(row);
+
+            current = nextItem;
         }
 
     });
-
 
     // Navigation
     connect(btnBack, &QPushButton::clicked, [stack]() {
