@@ -37,6 +37,8 @@ bool ItemDatabase::loadFromCSV(const std::string& path) {
         return false;
 
     std::string line;
+    int challenge_list[] = {161, 311, 332, 482, 636};
+    int daily_list[] = {482, 636};
 
     // Skip header rows
     std::getline(file, line);
@@ -64,6 +66,12 @@ bool ItemDatabase::loadFromCSV(const std::string& path) {
         item.name = standardize(name);
         item.quality = std::stoi(qualityStr);
         item.type = split(stripQuotes(typeStr), ',');
+
+        if (inList(item.id, challenge_list, sizeof(challenge_list) / sizeof(challenge_list[0])))
+            item.bannedInChallenge = true;
+
+        if (inList(item.id, daily_list, sizeof(daily_list) / sizeof(daily_list[0])))
+            item.bannedInDaily = true;
 
         // Make 3 Digit ID#
         std::ostringstream oss;
@@ -157,4 +165,12 @@ std::string titlecase(const std::string& input_str) {
             cap_str[i] = std::tolower(static_cast<unsigned char>(cap_str[i]));
     }
     return cap_str;
+}
+
+bool inList(int target, const int *list, int size) {
+    for (int i = 0; i < size; i ++) {
+        if (list[i] == target)
+            return true;
+    }
+    return false;
 }

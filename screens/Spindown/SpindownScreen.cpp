@@ -8,6 +8,7 @@
 #include <QListWidget>
 #include <QSpinBox>
 #include <QScrollArea>
+#include <QCheckBox>
 #include "src/SpinDown.hpp"
 #include "src/ItemDB.hpp"
 
@@ -28,9 +29,15 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     auto *inputLabel = new QLabel("Item Name:", this);
     auto *inputBox = new QLineEdit(this);
     inputBox->setPlaceholderText("Enter item name...");
-
     inputRow->addWidget(inputLabel);
     inputRow->addWidget(inputBox);
+
+    // Challenge and Daily Toggles
+    auto *toggleRow = new QHBoxLayout();
+    auto *challengeToggle = new QCheckBox("Challenge Mode", this);
+    auto *dailyToggle = new QCheckBox("Daily Run Mode", this);
+    toggleRow->addWidget(challengeToggle);
+    toggleRow->addWidget(dailyToggle);
 
     // Count row (how many spindowns)
     auto *countRow = new QHBoxLayout();
@@ -68,6 +75,7 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     layout->addSpacing(15);
     layout->addLayout(inputRow);
     layout->addLayout(countRow);
+    layout->addLayout(toggleRow);
     layout->addWidget(btnCalculate);
     layout->addSpacing(10);
     layout->addWidget(scrollArea);
@@ -79,13 +87,16 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     QPixmap placeHolder("src/images/questionmark.png");
 
     // Logic connection
-    connect(btnCalculate, &QPushButton::clicked, this, [inputBox, countBox, resultsLayout, placeHolder]() {
+    connect(btnCalculate, &QPushButton::clicked, this, [inputBox, countBox, resultsLayout, placeHolder, challengeToggle, dailyToggle]() {
 
         // Clear previous results
         while (QLayoutItem* item = resultsLayout->takeAt(0)) {
             if (item->widget()) delete item->widget();
             delete item;
         }
+
+        bool challengeMode = challengeToggle->isChecked();
+        bool dailyMode = dailyToggle->isChecked();
 
         std::string name = inputBox->text().toStdString();
         if (name.empty()) {
@@ -107,8 +118,26 @@ SpindownScreen::SpindownScreen(QWidget *parent)
 
         for (int i = 0; i < count; i++) {
 
-            int nextId = SpinDown::byId(current->id);
-            const Item* nextItem = ItemDatabase::instance().getById(nextId);
+            const Item* nextItem = nullptr;
+
+            while (true) {
+                int nextId = SpinDown::byId(current->id);
+                nextItem = ItemDatabase::instance().getById(nextId);
+
+                if (!nextItem) break;
+
+                if (challengeMode && nextItem->bannedInChallenge) {
+                    current = nextItem;
+                    continue;
+                }
+
+                if (dailyMode && nextItem->bannedInDaily) {
+                    current = nextItem;
+                    continue;
+                }
+
+                break;
+            }
 
             if (!nextItem) break;
 

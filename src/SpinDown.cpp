@@ -43,19 +43,36 @@ std::string SpinDown::byName(const std::string& name) {
 }
 
 // Return the next N Spindowns
-std::vector<const Item*> SpinDown::nextN(const Item* start, int count) {
+std::vector<const Item*> SpinDown::nextN(const Item* start, int count, bool challengeMode, bool dailyMode) {
     std::vector<const Item*> results;
     int id = start->id;
-
     for (int i = 0; i < count; i++) {
-        id = byId(id);
-        if (id < 0) break;
+        while(true) {
+            id = SpinDown::byId(id);
+            if (id < 0)
+                return results;
 
-        const Item* item = ItemDatabase::instance().getById(id);
-        if (!item) break;
+            const Item* item = ItemDatabase::instance().getById(id);
+            if (!item)
+                return results;
 
-        results.push_back(item);
+            if (SpinDown::isValid(item, challengeMode, dailyMode)) {
+                results.push_back(item);
+                break;
+            }
+        }
     }
 
     return results;
+}
+
+bool SpinDown::isValid(const Item* item, bool challengeMode, bool dailyMode) {
+    if (!item)
+        return false;
+    if (challengeMode && item->bannedInChallenge)
+        return false;
+    if (dailyMode && item->bannedInChallenge)
+        return false;
+    
+    return true;
 }

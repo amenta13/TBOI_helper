@@ -7,5 +7,7 @@ class SpinDown {
 public:
     static int byId(int id);
     static std::string byName(const std::string& name);
-    static std::vector<const Item*> nextN(const Item* start, int count);
+    static std::vector<const Item*> nextN(const Item* start, int count, bool challengeMode, bool dailyMode);
+    static bool isValid(const Item* item, bool challengeMode, bool dailyMode);
+
 };

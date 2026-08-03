@@ -11,6 +11,10 @@ struct Item {
     std::vector<std::string> type;
     std::string imagePath;
 
+    // Tags
+    bool bannedInChallenge = false;
+    bool bannedInDaily = false;
+
     // Future Implementations
     //---------------------------------
     //std::vector<std::string> pools;
@@ -51,3 +55,4 @@ std::vector<std::string> split(const std::string& original_str, char delimiter);
 std::string stripQuotes(const std::string& s);
 std::string standardize(const std::string& input_str);
 std::string titlecase(const std::string& input_str);
+bool inList(int target, const int *list, int size);
