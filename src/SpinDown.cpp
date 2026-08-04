@@ -2,19 +2,16 @@
 #include "ItemDB.hpp"
 
 // Spindown by ID
-int SpinDown::byId(int id) {
+int SpinDown::spinDownById(int id) {
     // Special cases
     if (id == 668)   // Dad's Note
-        return -1;
-
-    if (id <= 1)     // Sad Onion
         return -1;
 
     return id - 1;
 }
 
 // Spindown by item name
-std::string SpinDown::byName(const std::string& name) {
+std::string SpinDown::spinDownByName(const std::string& name) {
     // Access global singleton DB
     ItemDatabase& db = ItemDatabase::instance();
 
@@ -29,8 +26,8 @@ std::string SpinDown::byName(const std::string& name) {
     int id = item->id;
 
     // Perform spindown
-    int newId = byId(id);
-    if (newId < 0)
+    int newId = spinDownById(id);
+    if (newId <= 0)
         return "Cannot be spun down";
 
     // Lookup new item
@@ -48,8 +45,8 @@ std::vector<const Item*> SpinDown::nextN(const Item* start, int count, bool chal
     int id = start->id;
     for (int i = 0; i < count; i++) {
         while(true) {
-            id = SpinDown::byId(id);
-            if (id < 0)
+            id = spinDownById(id);
+            if (id <= 0)
                 return results;
 
             const Item* item = ItemDatabase::instance().getById(id);

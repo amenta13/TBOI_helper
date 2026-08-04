@@ -107,7 +107,15 @@ SpindownScreen::SpindownScreen(QWidget *parent)
 
         // Lookup starting item
         const Item* startItem = ItemDatabase::instance().getByName(name);
-        if (!startItem) {
+        if (startItem->id == 1) {
+            QLabel* msg = new QLabel("The Sad Onion Will Disapear");
+            resultsLayout->addWidget(msg);
+            return;
+        } else if (startItem->id == 668) {
+            QLabel* msg = new QLabel("Dad's Note Is Not Affected By The Spindown Dice");
+            resultsLayout->addWidget(msg);
+            return;
+        } else if (!startItem) {
             QLabel* msg = new QLabel("Item not found");
             resultsLayout->addWidget(msg);
             return;
@@ -121,10 +129,16 @@ SpindownScreen::SpindownScreen(QWidget *parent)
             const Item* nextItem = nullptr;
 
             while (true) {
-                int nextId = SpinDown::byId(current->id);
+                int nextId = SpinDown::spinDownById(current->id);
                 nextItem = ItemDatabase::instance().getById(nextId);
 
-                if (!nextItem) break;
+                while (!nextItem) {
+                    nextId--;
+                    if (nextId > 0)
+                        nextItem = ItemDatabase::instance().getById(nextId);
+                    else
+                        break;
+                }
 
                 if (challengeMode && nextItem->bannedInChallenge) {
                     current = nextItem;
@@ -162,6 +176,9 @@ SpindownScreen::SpindownScreen(QWidget *parent)
 
             QLabel* nameLabel = new QLabel(QString::fromStdString(nextItem->name));
             nameLabel->setStyleSheet("font-size: 18px;");
+
+            // For "The Sad Onion" add "The Sad Onion Will Disappear"
+            // For "Dad's Note" add "Dad's Note Is Not Affected By The Spindown Dice"
 
             rowLayout->addWidget(imgLabel);
             rowLayout->addWidget(nameLabel);

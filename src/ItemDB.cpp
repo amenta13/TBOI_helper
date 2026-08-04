@@ -94,7 +94,9 @@ const Item* ItemDatabase::getById(int id) const {
 }
 
 const Item* ItemDatabase::getByName(const std::string& name) const {
-    auto item_name = byName.find(name);
+    std::string key = standardize(name);
+
+    auto item_name = byName.find(key);
     if (item_name == byName.end())
         return nullptr;
 
