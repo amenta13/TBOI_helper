@@ -110,6 +110,17 @@ const Item* ItemDatabase::getByName(const std::string& name) const {
     return &item_id->second;
 }
 
+// Creates a list of all item names
+std::vector<std::string> ItemDatabase::getAllItemNames() const {
+    std::vector<std::string> names;
+    names.reserve(byId.size());
+
+    for (const auto& [id, item] : byId)
+        names.push_back(item.name);
+
+    return names;
+}
+
 // Prints out every item by ID order
 void ItemDatabase::printAll() const {
     std::vector<int> ids;

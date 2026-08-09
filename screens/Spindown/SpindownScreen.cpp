@@ -9,8 +9,37 @@
 #include <QSpinBox>
 #include <QScrollArea>
 #include <QCheckBox>
+#include <QStringListModel>
+#include <QSortFilterProxyModel>
+#include <QCompleter>
 #include "src/SpinDown.hpp"
 #include "src/ItemDB.hpp"
+
+// Model that stores item names and applies your standardize() logic
+class ItemFilterModel : public QStringListModel {
+public:
+    using QStringListModel::QStringListModel;
+
+    bool matches(int row, const QString& pattern) const {
+        QString item = data(index(row, 0), Qt::DisplayRole).toString();
+
+        std::string normalizedItem = standardize(item.toStdString());
+        std::string normalizedPattern = standardize(pattern.toStdString());
+
+        return normalizedItem.find(normalizedPattern) != std::string::npos;
+    }
+};
+
+// Proxy model that filters rows using ItemFilterModel::matches()
+class ItemProxyModel : public QSortFilterProxyModel {
+public:
+    ItemProxyModel(QObject* parent = nullptr) : QSortFilterProxyModel(parent) {}
+
+    bool filterAcceptsRow(int row, const QModelIndex&) const override {
+        auto model = static_cast<ItemFilterModel*>(sourceModel());
+        return model->matches(row, filterRegularExpression().pattern());
+    }
+};
 
 SpindownScreen::SpindownScreen(QWidget *parent)
     : QWidget(parent)
@@ -28,6 +57,27 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     auto *inputRow = new QHBoxLayout();
     auto *inputLabel = new QLabel("Item Name:", this);
     auto *inputBox = new QLineEdit(this);
+
+    
+
+    // Autocomplete Setup
+    QStringList itemNames;
+    for (const auto& name : ItemDatabase::instance().getAllItemNames()) {
+        itemNames << QString::fromStdString(name);
+    }
+
+    auto* model = new ItemFilterModel(itemNames, this);
+    auto* proxy = new ItemProxyModel(this);
+    proxy->setSourceModel(model);
+
+    // QCompleter using normalized matching but real names for display
+    QCompleter* completer = new QCompleter(proxy, this);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+    completer->setCompletionMode(QCompleter::PopupCompletion);
+
+    inputBox->setCompleter(completer);
+
+
     inputBox->setPlaceholderText("Enter item name...");
     inputRow->addWidget(inputLabel);
     inputRow->addWidget(inputBox);

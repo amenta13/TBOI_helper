@@ -36,6 +36,9 @@ public:
     const Item* getByName(const std::string& name) const;
     std::vector<const Item*> searchByPrefix(const std::string& query) const;
 
+    // Create list of all items
+    std::vector<std::string> getAllItemNames() const;
+
     // Print all items
     void printAll() const;
 
