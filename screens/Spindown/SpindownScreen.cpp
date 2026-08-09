@@ -58,8 +58,6 @@ SpindownScreen::SpindownScreen(QWidget *parent)
     auto *inputLabel = new QLabel("Item Name:", this);
     auto *inputBox = new QLineEdit(this);
 
-    
-
     // Autocomplete Setup
     QStringList itemNames;
     for (const auto& name : ItemDatabase::instance().getAllItemNames()) {
