@@ -63,7 +63,7 @@ bool ItemDatabase::loadFromCSV(const std::string& path) {
 
         Item item;
         item.id = std::stoi(idStr);
-        item.name = standardize(name);
+        item.name = name;
         item.quality = std::stoi(qualityStr);
         item.type = split(stripQuotes(typeStr), ',');
 
@@ -80,7 +80,8 @@ bool ItemDatabase::loadFromCSV(const std::string& path) {
         item.imagePath = "src/images/item" + id3 + ".png";
 
         byId[item.id] = item;
-        byName[item.name] = item.id;
+        std::string key = standardize(item.name);
+        byName[key] = item.id;
     }
 
     return true;
@@ -150,11 +151,53 @@ std::vector<const Item*> ItemDatabase::searchByPrefix(const std::string& query) 
 }
 
 
-// Convert string to all lowercase characters
+// Convert string to all lowercase characters, remove punctuation, whitespaces, leading articles
 std::string standardize(const std::string& input_str) {
-    std::string stand_str = input_str;
-    std::transform(stand_str.begin(), stand_str.end(), stand_str.begin(), ::tolower);
-    return stand_str;
+    std::string out;
+    out.reserve(input_str.size());
+
+    // Lowercase everything
+    for (char c : input_str)
+        out += std::tolower(static_cast<unsigned char>(c));
+
+    // Remove punctuation
+    out.erase(std::remove_if(out.begin(), out.end(), [](unsigned char c) {return std::ispunct(c);}), out.end());
+
+    // Collapse whitespace
+    std::string collapsed;
+    collapsed.reserve(out.size());
+    bool inSpace = false;
+
+    for (char c : out) {
+        if (std::isspace(static_cast<unsigned char>(c))) {
+            if (!inSpace)
+                collapsed += ' ';
+            inSpace = true;
+        } else {
+            collapsed += c;
+            inSpace = false;
+        }
+    }
+
+    // Trim leading/trailing spaces
+    size_t start = collapsed.find_first_not_of(' ');
+    size_t end = collapsed.find_last_not_of(' ');
+
+    if (start == std::string::npos)
+        return "";
+
+    std::string trimmed = collapsed.substr(start, end - start + 1);
+
+    // Remove leading "the " or "a "
+    if (trimmed.rfind("the ", 0) == 0)
+        trimmed = trimmed.substr(4);
+    else if (trimmed.rfind("a ", 0) == 0)
+        trimmed = trimmed.substr(2);
+
+    // Remove all spaces entirely
+    trimmed.erase(std::remove_if(trimmed.begin(), trimmed.end(), [](unsigned char c) {return std::isspace(c);}), trimmed.end());
+
+    return trimmed;
 }
 
 // Convert string to titlecase (Following convention of how titles are capitalized)

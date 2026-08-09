@@ -107,16 +107,16 @@ SpindownScreen::SpindownScreen(QWidget *parent)
 
         // Lookup starting item
         const Item* startItem = ItemDatabase::instance().getByName(name);
-        if (startItem->id == 1) {
+        if (!startItem) {
+            QLabel* msg = new QLabel("Item not found");
+            resultsLayout->addWidget(msg);
+            return;
+        } else if (startItem->id == 1) {
             QLabel* msg = new QLabel("The Sad Onion Will Disapear");
             resultsLayout->addWidget(msg);
             return;
         } else if (startItem->id == 668) {
             QLabel* msg = new QLabel("Dad's Note Is Not Affected By The Spindown Dice");
-            resultsLayout->addWidget(msg);
-            return;
-        } else if (!startItem) {
-            QLabel* msg = new QLabel("Item not found");
             resultsLayout->addWidget(msg);
             return;
         }
